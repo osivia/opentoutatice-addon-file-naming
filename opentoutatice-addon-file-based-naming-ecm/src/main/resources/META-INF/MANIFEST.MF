@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 1
+Bundle-Name: OpenToutatice File based Naming 
+Bundle-SymbolicName: fr.toutatice.ecm.platform.file.based.naming;singleton:=true
+Bundle-Localization: plugin
+Bundle-Category: stateful
+Nuxeo-Component: OSGI-INF/extensions/widgets-contrib.xml,
+ OSGI-INF/extensions/listener-contrib.xml
+ 

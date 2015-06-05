@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<component name="fr.toutatice.ecm.platform.file.based.naming.listener">
+
+    <extension target="org.nuxeo.ecm.core.event.EventServiceComponent"
+        point="listener">
+        
+        <listener name="fileNamingListener" async="false" postCommit="false"
+            class="fr.toutatice.ecm.platform.file.naming.listeners.ToutaticeFileNamingListener"
+            priority="100">
+            <event>aboutToCreate</event>
+            <event>beforeDocumentModification</event>
+        </listener>
+
+    </extension>
+
+</component>
+
+
