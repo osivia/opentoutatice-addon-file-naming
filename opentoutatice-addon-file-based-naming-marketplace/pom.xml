@@ -9,7 +9,7 @@
 		<version>1.1-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>opentoutatice-addon-file-based-naming-parent-marketplace</artifactId>
+	<artifactId>opentoutatice-addon-file-based-naming-marketplace</artifactId>
 	<packaging>zip</packaging>
 	<name>File based naming plugin - marketplace</name>
 
