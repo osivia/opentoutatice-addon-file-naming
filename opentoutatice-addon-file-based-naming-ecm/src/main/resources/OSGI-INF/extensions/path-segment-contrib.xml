@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<component name="fr.toutatice.ecm.platform.file.based.naming.path.segment">
+
+    <require>fr.toutatice.ecm.platform.core.path.segment</require>
+
+	<extension target="org.nuxeo.ecm.core.api.pathsegment.PathSegmentService"
+		point="pathSegmentService">
+		
+		<service
+			class="fr.toutatice.ecm.platform.file.naming.pathsegment.ToutaticeFilePathSegmentService" />
+			
+	</extension>
+
+</component>

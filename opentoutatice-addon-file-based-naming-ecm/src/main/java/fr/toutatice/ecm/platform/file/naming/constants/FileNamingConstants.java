@@ -31,7 +31,10 @@ public interface FileNamingConstants {
     /**
      * Supported document types for file based naming.
      */
-    List<String> supportedDocumentTypes = new ArrayList<String>(4){
+    List<String> SUPPORTED_DOC_TYPES = new ArrayList<String>(4){
+        
+        private static final long serialVersionUID = 3020126738932884167L;
+
         {
             add("File");
             add("Audio");

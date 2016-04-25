@@ -7,9 +7,7 @@
         
         <listener name="fileNamingListener" async="false" postCommit="false"
             class="fr.toutatice.ecm.platform.file.naming.listeners.ToutaticeFileNamingListener"
-            priority="100">
-            <!-- <event>aboutToCreate</event>
-            <event>beforeDocumentModification</event> -->
+            priority="5">
             <event>documentCreated</event>
             <event>documentModified</event>
         </listener>

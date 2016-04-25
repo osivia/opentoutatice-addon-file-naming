@@ -31,6 +31,7 @@ import org.nuxeo.ecm.core.event.impl.DocumentEventContext;
 import fr.toutatice.ecm.platform.core.constants.ToutaticeNuxeoStudioConst;
 import fr.toutatice.ecm.platform.core.helper.ToutaticeDocumentHelper;
 import fr.toutatice.ecm.platform.file.naming.constants.FileNamingConstants;
+import fr.toutatice.ecm.platform.file.naming.helper.ToutaticeFileNamingHelper;
 
 /**
  * 
@@ -50,14 +51,10 @@ public class ToutaticeFileNamingListener implements EventListener {
             if(DocumentEventTypes.DOCUMENT_CREATED.equals(eventName)
                     || DocumentEventTypes.DOCUMENT_UPDATED.equals(eventName)){
                 
-                if(FileNamingConstants.supportedDocumentTypes.contains(document.getType())){
+                if(FileNamingConstants.SUPPORTED_DOC_TYPES.contains(document.getType())){
                     
                     String title = (String) document.getPropertyValue(ToutaticeNuxeoStudioConst.CST_DOC_XPATH_NUXEO_DC_TITLE);
-                    String fileName = StringUtils.EMPTY;
-                    Blob blob = (Blob) document.getPropertyValue(ToutaticeNuxeoStudioConst.CST_DOC_XPATH_NUXEO_FILE_CONTENT);
-                    if(blob != null) {
-                        fileName = blob.getFilename();
-                    }
+                    String fileName = ToutaticeFileNamingHelper.getDocFileName(document);
                     
                     if(StringUtils.isBlank(title) && StringUtils.isNotBlank(fileName)){
                         document.setPropertyValue(ToutaticeNuxeoStudioConst.CST_DOC_XPATH_NUXEO_DC_TITLE, fileName);

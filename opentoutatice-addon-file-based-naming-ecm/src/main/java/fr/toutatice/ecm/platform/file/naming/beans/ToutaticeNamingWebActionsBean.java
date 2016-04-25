@@ -45,7 +45,7 @@ public class ToutaticeNamingWebActionsBean extends ToutaticeCTWebActionsBean {
             document = this.navigationContext.getCurrentDocument();
         }
         
-        return !FileNamingConstants.supportedDocumentTypes.contains(document.getType());
+        return !FileNamingConstants.SUPPORTED_DOC_TYPES.contains(document.getType());
     }
     
 }
