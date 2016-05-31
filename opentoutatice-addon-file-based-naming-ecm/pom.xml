@@ -32,11 +32,6 @@
 			<artifactId>opentoutatice-ecm-platform-web</artifactId>
 			<version>${nuxeo.opentoutatice.version}</version>
 		</dependency>
-		<dependency>
-		      <groupId>opentoutatice-ecm.collab-tools</groupId>
-		      <artifactId>opentoutatice-collab-tools-ecm</artifactId>
-		      <version>${nuxeo.opentoutatice.collab.tools.version}</version>
-		</dependency>
 	</dependencies>
 
 	<build>
