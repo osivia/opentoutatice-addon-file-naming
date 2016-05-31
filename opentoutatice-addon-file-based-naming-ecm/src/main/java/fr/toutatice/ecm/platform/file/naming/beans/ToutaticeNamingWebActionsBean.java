@@ -18,22 +18,28 @@
  */
 package fr.toutatice.ecm.platform.file.naming.beans;
 
+import java.io.Serializable;
+
 import org.jboss.seam.ScopeType;
+import org.jboss.seam.annotations.In;
 import org.jboss.seam.annotations.Install;
 import org.jboss.seam.annotations.Name;
 import org.jboss.seam.annotations.Scope;
 import org.nuxeo.ecm.core.api.DocumentModel;
+import org.nuxeo.ecm.platform.ui.web.api.NavigationContext;
 
-import fr.toutatice.ecm.platform.collab.tools.mail.ToutaticeCTWebActionsBean;
 import fr.toutatice.ecm.platform.file.naming.constants.ExtendedSeamPrecedence;
 import fr.toutatice.ecm.platform.file.naming.constants.FileNamingConstants;
 
-@Name("webActions")
+@Name("namingWebActions")
 @Scope(ScopeType.CONVERSATION)
 @Install(precedence = ExtendedSeamPrecedence.ADD_ON)
-public class ToutaticeNamingWebActionsBean extends ToutaticeCTWebActionsBean {
+public class ToutaticeNamingWebActionsBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	
+	@In(create = true)
+	protected NavigationContext navigationContext;
     
     /**
      * 
