@@ -2,7 +2,14 @@
 <package type="addon" name="open-toutatice-addons-file-based-naming" version="@VERSION@">
 	<title>Addon to name documents according to their attached file</title>
 	<description>
-		<p>Allows to name documents according to their principal attached file (if it is)</p>
+		<p>Allows to name documents according to their principal attached file.
+		
+		   ____________________________________________________________________
+		   
+		   Main Fixes:
+		   * Bad generation of ecm:name (and so ttc:webid) when title is empty.
+		   * Correlation with opentoutatice-collab-tools addon removed.
+		</p>
 	</description>
 	<home-page>http://www.osivia.com</home-page>
 	<vendor>Osivia</vendor>
@@ -18,7 +25,7 @@
 	</platforms>
 	<dependencies>
 		<!-- Dependance sur la plate-forme opentoutatice -->
-		<package>open-toutatice-addons-collab-tools:3.2.1-RC01</package>
+		<package>open-toutatice:3.2.2</package>
 	</dependencies>
 	<license>LGPL 2.1</license>
 	<license-url>http://www.gnu.org/licenses/lgpl-2.1.html</license-url>
