@@ -19,7 +19,6 @@
 package fr.toutatice.ecm.platform.file.naming.listeners;
 
 import org.apache.commons.lang.StringUtils;
-import org.nuxeo.ecm.core.api.Blob;
 import org.nuxeo.ecm.core.api.ClientException;
 import org.nuxeo.ecm.core.api.CoreSession;
 import org.nuxeo.ecm.core.api.DocumentModel;
@@ -39,7 +38,7 @@ import fr.toutatice.ecm.platform.file.naming.helper.ToutaticeFileNamingHelper;
  *
  */
 public class ToutaticeFileNamingListener implements EventListener {
-
+    
     @Override
     public void handleEvent(Event event) throws ClientException {
         if (event.getContext() instanceof DocumentEventContext) {
@@ -56,7 +55,7 @@ public class ToutaticeFileNamingListener implements EventListener {
                     String title = (String) document.getPropertyValue(ToutaticeNuxeoStudioConst.CST_DOC_XPATH_NUXEO_DC_TITLE);
                     String fileName = ToutaticeFileNamingHelper.getDocFileName(document);
                     
-                    if(StringUtils.isBlank(title) && StringUtils.isNotBlank(fileName)){
+                    if (StringUtils.isBlank(title) && StringUtils.isNotBlank(fileName)) {
                         document.setPropertyValue(ToutaticeNuxeoStudioConst.CST_DOC_XPATH_NUXEO_DC_TITLE, fileName);
                         ToutaticeDocumentHelper.saveDocumentSilently(session, document, true);
                     }
