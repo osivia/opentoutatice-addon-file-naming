@@ -1,8 +1,6 @@
 <?xml version="1.0"?>
 
 <fragment version="1">
- 	
-	<require>fr.toutatice.ecm.platform.collab.tools</require>
 
 	<extension target="application#MODULE">
 		<module>
