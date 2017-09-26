@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>opentoutatice-ecm.file-based-naming</groupId>
 		<artifactId>opentoutatice-addon-file-based-naming-parent</artifactId>
-		<version>4.6-SNAPSHOT</version>
+		<version>4.6</version>
 	</parent>
 
 	<properties>
