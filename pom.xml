@@ -11,14 +11,14 @@
 	<version>4.6-SNAPSHOT</version>
 
 	<properties>
-		<nuxeo.version>6.0-HF37</nuxeo.version>
-		<nuxeo.cap.version>6.0</nuxeo.cap.version>
-		<nuxeo.opentoutatice.version>4.6</nuxeo.opentoutatice.version>
+		<nuxeo.version>6.1.0</nuxeo.version>
+		<!-- <nuxeo.cap.version>6.0</nuxeo.cap.version> -->
+		<opentoutatice.version>4.7.17</opentoutatice.version>
 	</properties>
 
 	<modules>
 		<module>opentoutatice-addon-file-based-naming-ecm</module>
-		<module>opentoutatice-addon-file-based-naming-marketplace</module>
+		<!-- <module>opentoutatice-addon-file-based-naming-marketplace</module> -->
 	</modules>
 
 	<dependencyManagement>
@@ -33,17 +33,17 @@
 			<dependency>
 				<groupId>opentoutatice-ecm.platform</groupId>
 				<artifactId>opentoutatice-ecm-platform-core</artifactId>
-				<version>${nuxeo.opentoutatice.version}</version>
+				<version>${opentoutatice.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>opentoutatice-ecm.platform</groupId>
 				<artifactId>opentoutatice-ecm-platform-services</artifactId>
-				<version>${nuxeo.opentoutatice.version}</version>
+				<version>${opentoutatice.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>opentoutatice-ecm.platform</groupId>
 				<artifactId>opentoutatice-ecm-platform-web</artifactId>
-				<version>${nuxeo.opentoutatice.version}</version>
+				<version>${opentoutatice.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
@@ -71,6 +71,16 @@
 					<target>1.7</target>
 				</configuration>
 			</plugin>
+            <!-- Disable strict javadoc checking since java8 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <configuration>
+                    <additionalOptions>
+                        <additionalOption>-Xdoclint:none</additionalOption>
+                    </additionalOptions>
+                </configuration>
+            </plugin>			
 		</plugins>
 		<pluginManagement>
 			<plugins>
@@ -84,20 +94,24 @@
 		</pluginManagement>
 	</build>
 
-	<scm>
-		<developerConnection>scm:svn:http://projet.toutatice.fr/repos/toutatice-ecm/opentoutatice-addons/opentoutatice-file-based-naming/trunk</developerConnection>
-	</scm>
+    <scm>
+        <url>https://github.com/osivia/opentoutatice-addon-file-naming</url>
+        <connection>scm:git:ssh://git@github.com/osivia/opentoutatice-addon-file-naming.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/osivia/opentoutatice-addon-file-naming.git</developerConnection>     
+        <tag>HEAD</tag> 
+    </scm>
+    
+    <distributionManagement>
+        <repository>
+            <id>osivia-releases</id>
+            <url>http://www.osivia.org/nexus/content/repositories/osivia-releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>osivia-snapshots</id>
+            <url>http://www.osivia.org/nexus/content/repositories/osivia-snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 
-	<distributionManagement>
-		<repository>
-			<id>toutatice-releases</id>
-			<url>http://projet.toutatice.fr/nexus/content/repositories/toutatice-releases</url>
-		</repository>
-		<snapshotRepository>
-			<id>toutatice-snapshots</id>
-			<url>http://projet.toutatice.fr/nexus/content/repositories/toutatice-snapshots</url>
-		</snapshotRepository>
-	</distributionManagement>
 
 
 </project>
