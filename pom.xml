@@ -8,17 +8,16 @@
 	<packaging>pom</packaging>
 	<name>File-based-naming plugin - parent</name>
 	<description>Addon allowing document naming based on its attached file</description>
-	<version>4.7-SNAPSHOT</version>
+	<version>4.4-SNAPSHOT</version>
 
 	<properties>
-		<nuxeo.version>6.1.0</nuxeo.version>
+		<nuxeo.version>6.1.4</nuxeo.version>
 		<!-- <nuxeo.cap.version>6.0</nuxeo.cap.version> -->
-		<opentoutatice.version>4.7.17</opentoutatice.version>
+		<opentoutatice.version>4.4.31</opentoutatice.version>
 	</properties>
 
 	<modules>
 		<module>opentoutatice-addon-file-based-naming-ecm</module>
-		<!-- <module>opentoutatice-addon-file-based-naming-marketplace</module> -->
 	</modules>
 
 	<dependencyManagement>
